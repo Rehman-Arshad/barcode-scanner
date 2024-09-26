@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'barcode-scanner',
+  appId: 'com.e.mart',
+  appName: 'E Mart',
   webDir: 'www'
 };
 
