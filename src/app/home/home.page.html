@@ -1,6 +1,7 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-      <ion-buttons slot="end">
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>E-Mart</ion-title>
+      <ion-buttons slot="end" class="iconCart">
        <ion-button color="dark" fill="clear" routerLink="cart">
          <ion-icon name="cart-outline" slot="icon-only"></ion-icon>
          <ion-badge color="light">
@@ -14,10 +15,10 @@
 <ion-content>
   <ion-item lines="none" class="ion-margin-vertical">
     <ion-label>
-      Hello
+      Ali Ahmad
       <p>
         <ion-text color="dark">
-         Coding Techniques
+         Gift Shop
         </ion-text>
       </p>
     </ion-label>
@@ -25,10 +26,6 @@
     <img [src]="'assets/img/avatar.jpg'">
     </ion-thumbnail>
   </ion-item>
-
-  <ion-list-header>
-  Your Insights
-  </ion-list-header>
   <ion-row class="ion-margin">
 
     <ion-col size="6" class="ion-text-center">
@@ -102,5 +99,5 @@
 
   </ion-row>
 
-  <ion-button [routerLink]="['/login']">Login</ion-button>
+  <ion-button expand="full"  [routerLink]="['/login']" class="ion-margin"> Back to Login</ion-button>
 </ion-content>
