@@ -22,6 +22,8 @@ ion-header {
 .iconCart{
   background-color: rgba(255, 255, 255, 0.441);
   border-radius: 50%;
+  width: 2.7rem;
+  height: 2.7rem;
 }
 
 ion-content {
@@ -35,7 +37,7 @@ ion-item {
     font-size: 1.3rem;
     font-weight: bold;
     p {
-      margin-top: 5px;
+      margin-top: 0.3125rem;
       font-size: 0.9rem;
       font-weight: normal;
     }
@@ -66,8 +68,6 @@ ion-label{
   font-weight: 500;
 }
 }
-
-
 
 ion-card, ion-thumbnail{
   display: flex;
