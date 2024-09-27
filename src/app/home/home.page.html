@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>E-Mart</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title color="light">E-Mart</ion-title>
       <ion-buttons slot="end" class="iconCart">
        <ion-button color="dark" fill="clear" routerLink="cart">
          <ion-icon name="cart-outline" slot="icon-only"></ion-icon>
@@ -29,7 +29,7 @@
   <ion-row class="ion-margin">
 
     <ion-col size="6" class="ion-text-center">
-      <ion-card color="light" (click)="scanBarcode()">
+      <ion-card class="cardColor" (click)="scanBarcode()">
        <ion-thumbnail [style.background]="'rgba(240,94,112, 0.2)'">
         <ion-icon name="scan-outline" color="tertiary">
         </ion-icon>
@@ -41,7 +41,7 @@
     </ion-col>
 
     <ion-col size="6" class="ion-text-center">
-      <ion-card color="light" routerLink="products">
+      <ion-card class="cardColor" routerLink="products">
        <ion-thumbnail [style.background]="'rgba(255,152,0, 0.2)'">
         <ion-icon name="list-outline" color="warning">
         </ion-icon>
@@ -53,7 +53,7 @@
     </ion-col>
 
     <ion-col size="6" class="ion-text-center">
-      <ion-card color="light">
+      <ion-card class="cardColor">
        <ion-thumbnail [style.background]="'rgba(76,175,180, 0.2)'">
         <ion-icon name="checkmark-circle" color="success">
         </ion-icon>
@@ -65,7 +65,7 @@
     </ion-col>
 
     <ion-col size="6" class="ion-text-center">
-      <ion-card color="light">
+      <ion-card class="cardColor">
        <ion-thumbnail [style.background]="'rgba(94,155,240, 0.2)'">
         <ion-icon name="bag-handle-outline" color="secondary">
         </ion-icon>
@@ -77,13 +77,13 @@
     </ion-col>
 
     <ion-col size="6" class="ion-text-center" >
-      <ion-card color="light" (click)="scanAndPay()">
+      <ion-card class="cardColor" (click)="scanAndPay()">
        <ion-thumbnail [style.background]="'rgba(240,143,94, 0.2)'">
         <ion-icon name="scan-outline" color="primary">
         </ion-icon>
        </ion-thumbnail>
        <ion-label>
-        Scan QRCode & Pay
+        Scan & Pay
        </ion-label>
       </ion-card>
     </ion-col>
@@ -99,5 +99,5 @@
 
   </ion-row>
 
-  <ion-button expand="full"  [routerLink]="['/login']" class="ion-margin"> Back to Login</ion-button>
+  <ion-button expand="full"  [routerLink]="['/login']" class="ion-margin" color="secondary"> Back to Login</ion-button>
 </ion-content>
