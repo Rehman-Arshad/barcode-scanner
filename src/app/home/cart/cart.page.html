@@ -6,7 +6,7 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button color="dark" (click)="startScan()" class="iconCart">
+      <ion-button color="light" (click)="startScan()" class="iconCart">
         <ion-icon name="scan-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -16,7 +16,7 @@
 <ion-content>
   @if(model){ @for(item of model?.items; track $index){
   <ion-card color="light" class="ion-padding-vertical">
-    <ion-item lines="none">
+    <ion-item> <!--line="none" -->
       <ion-thumbnail slot="start">
         <ion-img [src]="item?.cover"></ion-img>
       </ion-thumbnail>
@@ -24,7 +24,7 @@
       <ion-label>
         {{ item?.name }}
         <p class="price">
-          <ion-text color="primary">
+          <ion-text color="secondary">
             <strong>{{ currency }} {{ item?.price }}</strong>
           </ion-text>
         </p>
@@ -34,7 +34,7 @@
         <ion-col>
           <ion-button
             fill="clear"
-            color="primary"
+            color="secondary"
             (click)="subtractQuantity(item)"
           >
             <ion-icon slot="icon-only" name="remove"></ion-icon>
