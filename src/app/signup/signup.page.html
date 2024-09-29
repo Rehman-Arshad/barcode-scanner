@@ -1,35 +1,39 @@
 <ion-content [fullscreen]="true">
   <div class="header">
-    <ion-title class="title">Welcome</ion-title>
-    <p class="subTitle">SignUp to create your account</p>
+    <ion-title class="title">Create Account</ion-title>
+    <p class="subTitle">Register with valid e-mail address</p>
   </div>
 
-  <form>
+  <form class="container">
     <div class="inputFields">
-    <ion-item>
-      <ion-input placeholder="Username" class="input"></ion-input>
-      <ion-icon name="person-outline" class="icon"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Email" class="input"></ion-input>
-      <ion-icon name="person-outline" class="icon"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Password" class="input"></ion-input>
-      <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
-    </ion-item>
+      <ion-item>
+        <ion-input placeholder="Username" class="input"></ion-input>
+        <ion-icon name="person-outline" class="icon"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Email" class="input"></ion-input>
+        <ion-icon name="person-outline" class="icon"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Password" class="input"></ion-input>
+        <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+      </ion-item>
+    </div>
     <div class="forgotPassword">
-      <a [routerLink]="['/reset-password']" style="color: rgb(255, 255, 255);"> Forgot Password?</a>
+      <a [routerLink]="['/reset-password']" style="color: rgb(255, 255, 255)">
+        Forgot Password?</a
+      >
     </div>
     <div class="signUpBtn">
-      <ion-button class="custom-button" [routerLink]="['/home']">SignUp</ion-button>
-    </div>
-    <div class="signupLink">
-      <p>
-        Already a member?
-        <a [routerLink]="['/login']" style="color: rgb(255, 255, 255);">Signin now</a>
-      </p>
-    </div>
+      <ion-button class="custom-button" [routerLink]="['/login']"
+        >SignUp</ion-button
+      >
     </div>
   </form>
+  <div class="signupLink">
+    <p>
+      Already a member?
+      <a [routerLink]="['/login']" style="color: rgb(255, 255, 255)">Sign In</a>
+    </p>
+  </div>
 </ion-content>

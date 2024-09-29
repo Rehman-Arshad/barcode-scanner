@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone'
 import { addIcons } from 'ionicons'
-import { add, bagHandleOutline, barcodeOutline, cartOutline, checkmarkCircle, chevronForward, closeOutline, listOutline, lockClosedOutline, personOutline, remove, scanOutline } from 'ionicons/icons'
+import { add, arrowForwardCircle, bagHandleOutline, barcodeOutline, cartOutline, checkmarkCircle, chevronForward, closeOutline, fingerPrint, listOutline, lockClosedOutline, personOutline, remove, scanOutline } from 'ionicons/icons'
 
 @Component({
   selector: 'app-root',
@@ -28,6 +28,7 @@ export class AppComponent {
       chevronForward,
       lockClosedOutline,
       personOutline,
+      fingerPrint
     })
   }
 }

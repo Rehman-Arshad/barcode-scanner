@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Products</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title color="light">Products</ion-title>
 
    <ion-buttons slot="start">
-   <ion-back-button defaultHref="/home"></ion-back-button>
+   <ion-back-button color="light" defaultHref="/home"></ion-back-button>
    </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +22,7 @@
             {{item?.description}}
           </p>
           <p>
-            <ion-text color="primary">{{currency}}{{item?.price}}</ion-text>
+            <ion-text color="secondary">{{currency}}{{item?.price}}</ion-text>
           </p>
         </ion-label>
         <ion-button slot="end" fill="clear" color="dark" (click)="getBarcodeData(item)">
