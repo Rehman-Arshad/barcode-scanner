@@ -6,7 +6,7 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button color="dark" (click)="startScan()" class="iconCart">
+      <ion-button color="light" (click)="startScan()" class="iconCart">
         <ion-icon name="scan-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -16,7 +16,7 @@
 <ion-content>
   @if(model){ @for(item of model?.items; track $index){
   <ion-card color="light" class="ion-padding-vertical">
-    <ion-item lines="none">
+    <ion-item> <!--line="none" -->
       <ion-thumbnail slot="start">
         <ion-img [src]="item?.cover"></ion-img>
       </ion-thumbnail>
