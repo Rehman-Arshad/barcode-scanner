@@ -26,15 +26,23 @@
 }
 
 ion-item {
-  margin-bottom: 0.7rem;
-  border-radius: 1.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.625rem;
   --background: #ffffff;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.credentialRules {
+  font-size: 14px;
+  color: #000000;
+  margin-left: 0.9rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
 .signupLink {
   position: relative;
-  margin-top: 14rem;
+  margin-top: 18rem;
   p {
     font-size: 0.9rem;
     text-align: center;
@@ -66,37 +74,14 @@ ion-item {
   font-size: 1rem;
   --background: #000000;
   --color: white;
-  --border-radius: 1.5rem;
+  --border-radius: 0.625rem;
   width: 150px;
   height: 40px;
 }
 
-@media (max-width: 768px) {
-  .signupLink {
-    margin-top: 10rem;
-  }
-}
-
-@media (max-width: 414px) {
-  .signupLink {
-    margin-top: 18rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .signupLink {
-    margin-top: 11rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .signupLink {
-    margin-top: 13rem;
-  }
-}
 
 @media (max-width: 393px) {
   .signupLink {
-    margin-top: 16rem;
+    margin-top: 14rem;
   }
 }
