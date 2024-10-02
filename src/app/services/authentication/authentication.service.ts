@@ -1,68 +1,79 @@
-import { Injectable } from '@angular/core';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, signOut, updateProfile } from 'firebase/auth';
-import { initializeApp } from 'firebase/app';
+import { Injectable } from '@angular/core'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut,
+  updateProfile
+} from 'firebase/auth'
+import { initializeApp } from 'firebase/app'
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyADLdcEdEICHyW596pUmr3YQqco4-opqxo",
-  authDomain: "barcode-scanner-19e33.firebaseapp.com",
-  projectId: "barcode-scanner-19e33",
-  storageBucket: "barcode-scanner-19e33.appspot.com",
-  messagingSenderId: "527468029299",
-  appId: "1:527468029299:web:6f578ab1f490e8c8591106",
-  measurementId: "G-T5X4KYR7SE"
-};
+  apiKey: 'AIzaSyADLdcEdEICHyW596pUmr3YQqco4-opqxo',
+  authDomain: 'barcode-scanner-19e33.firebaseapp.com',
+  projectId: 'barcode-scanner-19e33',
+  storageBucket: 'barcode-scanner-19e33.appspot.com',
+  messagingSenderId: '527468029299',
+  appId: '1:527468029299:web:6f578ab1f490e8c8591106',
+  measurementId: 'G-T5X4KYR7SE'
+}
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const app = initializeApp(firebaseConfig)
+const auth = getAuth()
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
+  constructor () {}
 
-  constructor() { }
-
-  async registerUser(email: string, password: string, displayName: string) {
+  async registerUser (email: string, password: string, displayName: string) {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      await updateProfile(user, { displayName: displayName });
-      return userCredential;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      )
+      const user = userCredential.user
+      await updateProfile(user, { displayName: displayName })
+      return userCredential
     } catch (error) {
-      throw error;
+      throw error
     }
   }
 
-  async loginUser(email: string, password: string) {
+  async loginUser (email: string, password: string) {
     try {
-      return await signInWithEmailAndPassword(auth, email, password);
+      return await signInWithEmailAndPassword(auth, email, password)
     } catch (error) {
-      throw error;
+      throw error
     }
   }
 
-  async resetPassword(email: string) {
+  async resetPassword (email: string) {
     try {
-      return await sendPasswordResetEmail(auth, email);
+      return await sendPasswordResetEmail(auth, email)
     } catch (error) {
-      throw error;
+      throw error
     }
   }
 
-  async signOut() {
+  async signOut () {
     try {
-      return await signOut(auth);
+      return await signOut(auth)
     } catch (error) {
-      throw error;
+      throw error
     }
   }
 
-  async getProfile() {
+  async getProfile () {
     try {
-      const user = await auth.currentUser;
-      return user ? user.displayName || 'Guest' : 'Guest';
+      const user = await auth.currentUser
+      return user ? user.displayName || 'Guest' : 'Guest'
     } catch (error) {
-      throw error;
+      throw error
     }
   }
 }
