@@ -7,6 +7,8 @@ import { LoadingController } from '@ionic/angular'
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonFabButton, IonItem, IonInput, IonIcon, IonFab, IonButton, IonText } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { AuthenticationService } from '../services/authentication/authentication.service';
+import { FingerprintAIO } from '@awesome-cordova-plugins/fingerprint-aio/ngx';
+
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ import { AuthenticationService } from '../services/authentication/authentication
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [IonText, IonButton, IonFab, IonIcon, IonInput, IonItem, IonFabButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink, ReactiveFormsModule]
-  ,providers: [AuthenticationService]
+  ,providers: [AuthenticationService, FingerprintAIO]
 })
 export class LoginPage implements OnInit {
   loginForm!: FormGroup;
@@ -23,6 +25,7 @@ export class LoginPage implements OnInit {
   password: string = '';
 
   constructor(
+    private fp :  FingerprintAIO,
     public formBuilder: FormBuilder,
     public loadingCtrl: LoadingController,
     public authService: AuthenticationService,
@@ -55,7 +58,7 @@ export class LoginPage implements OnInit {
     return this.loginForm?.controls
   }
 
-  async loginUser(){
+  async loginUser(userEmail: string, userPassword: string){
     const loading = await this.loadingCtrl.create();
     await loading.present();
     if (this.loginForm?.valid){
@@ -70,6 +73,26 @@ export class LoginPage implements OnInit {
       }else{
         console.log("provide correct values");
       }
+    }
+  }
+  async loginWithFingerprint () {
+    try {
+      const available = await this.fp.isAvailable()
+      if (!available) {
+        console.log(
+          'Fingerprint authentication is not available on this device'
+        )
+        return false
+      }
+      await this.fp.show({
+        title: 'Login with fingerprint',
+        description: 'Please authenticate with your fingerprint'
+      })
+     this.router.navigate(['/home']);
+      return true
+    } catch (error) {
+      console.error(error)
+      return false
     }
   }
 
