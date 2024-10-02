@@ -16,7 +16,7 @@
 <ion-content>
   @if(model){ @for(item of model?.items; track $index){
   <ion-card color="light" class="ion-padding-vertical">
-    <ion-item> <!--line="none" -->
+    <ion-item line="none"> 
       <ion-thumbnail slot="start">
         <ion-img [src]="item?.cover"></ion-img>
       </ion-thumbnail>
@@ -59,7 +59,7 @@
 
   <ion-list lines="none" class="ion-margin">
     <ion-item>
-      <ion-label color="light"><strong>Total</strong></ion-label>
+      <ion-label color="dark"><strong>Total</strong></ion-label>
       <ion-text slot="end" color="secondary">
         <strong>{{ currency }}{{ model?.grandTotal | number: '0.2-2' }}</strong>
       </ion-text>

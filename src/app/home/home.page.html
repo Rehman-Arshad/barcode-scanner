@@ -15,7 +15,7 @@
 <ion-content>
   <ion-item lines="none" class="ion-margin-vertical">
     <ion-label>
-      Ali Ahmad
+      {{user}}
       <p>
         <ion-text color="dark">
          Gift Shop
@@ -96,8 +96,9 @@
   [duration]="3000"
   (didDismiss)="isToast = false"
   ></ion-toast>
-
   </ion-row>
+  <div class="logoutBtn">
+    <ion-button class="custom-button" (click)="logOut()">Signout</ion-button>
+  </div>
 
-  <ion-button expand="full"  [routerLink]="['/login']" class="ion-margin" color="secondary"> Back to Login</ion-button>
 </ion-content>

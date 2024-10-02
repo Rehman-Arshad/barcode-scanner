@@ -3,6 +3,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone'
 import { addIcons } from 'ionicons'
 import { add, arrowForwardCircle, bagHandleOutline, barcodeOutline, cartOutline, checkmarkCircle, chevronForward, closeOutline, fingerPrint, listOutline, lockClosedOutline, personOutline, remove, scanOutline } from 'ionicons/icons'
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

@@ -3,6 +3,8 @@ import { RouterLink } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, IonIcon, IonItem, IonText, IonLabel, IonThumbnail, IonList, IonListHeader, IonRow, IonCol, IonCard, IonToast, IonBadge } from '@ionic/angular/standalone';
 import { CartService } from '../services/cart/cart.service';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from '../services/authentication/authentication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,10 +20,12 @@ export class HomePage implements OnInit, OnDestroy {
   totalItems: number = 0;
   cartSub!: Subscription;
    private cartService = inject(CartService);
+  user: string = '';
 
 
-
-  constructor() {}
+  constructor(public router: Router, public authService: AuthenticationService) {
+    this.getProfile();
+  }
 
   ngOnInit(){
    this.cartSub = this.cartService.cart.subscribe({
@@ -76,5 +80,21 @@ export class HomePage implements OnInit, OnDestroy {
     ngOnDestroy(): void {
       if (this.cartSub) this.cartSub.unsubscribe();
   }
+
+
+  async getProfile() {
+    const profile = await this.authService.getProfile();
+    console.log("User Profile:", profile);
+    this.user = profile;
+  }
+
+  async logOut() {
+    this.authService.signOut().then(() => {
+      this.router.navigate(['/login']);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
 
 }
