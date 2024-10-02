@@ -33,6 +33,10 @@ export const routes: Routes = [
         path: 'cart',
         loadComponent: () => import('./home/cart/cart.page').then(m => m.CartPage)
       },
+      {
+        path: 'profile',
+        loadComponent: () => import('./home/profile/profile.page').then(m => m.ProfilePage)
+      },
     ],
   },
 ];
