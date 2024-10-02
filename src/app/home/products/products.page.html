@@ -13,7 +13,8 @@
     @for(item of items; track $index) {
       <ion-item>
         <ion-thumbnail slot="start">
-        <ion-img [src]="item?.cover"> </ion-img>
+        <ion-img [src]="item?.cover" loading="lazy">
+        ></ion-img>
         </ion-thumbnail>
 
         <ion-label>

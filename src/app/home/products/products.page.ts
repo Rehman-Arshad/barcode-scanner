@@ -3,6 +3,8 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonButtons, Ion
 import * as JsBarcode from 'jsbarcode';
 import { products } from 'src/app/data/products';
 
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -45,6 +47,5 @@ export class ProductsPage implements OnInit {
   hideBarcodeData() {
     this.showBarcode = false;
   }
- 
 
 }

@@ -22,7 +22,7 @@
         </ion-text>
       </p>
     </ion-label>
-    <ion-thumbnail slot="end">
+    <ion-thumbnail routerLink="profile" slot="end">
     <img [src]="'assets/img/avatar.jpg'">
     </ion-thumbnail>
   </ion-item>
@@ -53,7 +53,7 @@
     </ion-col>
 
     <ion-col size="6" class="ion-text-center">
-      <ion-card class="cardColor">
+      <ion-card class="cardColor" routerLink="transactions">
        <ion-thumbnail [style.background]="'rgba(76,175,180, 0.2)'">
         <ion-icon name="checkmark-circle" color="success">
         </ion-icon>
@@ -65,7 +65,7 @@
     </ion-col>
 
     <ion-col size="6" class="ion-text-center">
-      <ion-card class="cardColor">
+      <ion-card class="cardColor" routerLink="orders">
        <ion-thumbnail [style.background]="'rgba(94,155,240, 0.2)'">
         <ion-icon name="bag-handle-outline" color="secondary">
         </ion-icon>
@@ -100,7 +100,4 @@
   <div class="logoutBtn">
     <ion-button class="custom-button" (click)="logOut()">Signout</ion-button>
   </div>
-
-  <ion-button>Enable Fingerprint</ion-button>
-
 </ion-content>
