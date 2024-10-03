@@ -30,8 +30,6 @@ export class HomePage implements OnInit, OnDestroy {
   ngOnInit(){
    this.cartSub = this.cartService.cart.subscribe({
     next: (cart) => {
-      console.log(cart);
-      console.log("this is cart");
       this.totalItems = cart?.totalItem ?? 0;
     }
    });
@@ -84,7 +82,6 @@ export class HomePage implements OnInit, OnDestroy {
 
   async getProfile() {
     const profile = await this.authService.getProfile();
-    console.log("User Profile:", profile);
     this.user = profile;
   }
 

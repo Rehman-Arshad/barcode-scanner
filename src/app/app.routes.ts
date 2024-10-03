@@ -27,7 +27,20 @@ export const routes: Routes = [
       },
       {
         path: 'products',
-        loadComponent: () => import('./home/products/products.page').then(m => m.ProductsPage)
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('./home/products/products.page').then(m => m.ProductsPage)
+          },
+          {
+            path: 'add-products',
+            loadComponent: () => import('./home/products/add-products/add-products.page').then(m => m.AddProductsPage)
+          },
+          {
+            path: 'products-details',
+            loadComponent: () => import('./home/products/products-details/products-details.page').then( m => m.ProductsDetailsPage)
+          },
+        ]
       },
       {
         path: 'cart',
@@ -39,13 +52,12 @@ export const routes: Routes = [
       },
       {
         path: 'orders',
-        loadComponent: () => import('./home/orders/orders.page').then( m => m.OrdersPage)
+        loadComponent: () => import('./home/orders/orders.page').then(m => m.OrdersPage)
       },
       {
         path: 'transactions',
-        loadComponent: () => import('./home/transactions/transactions.page').then( m => m.TransactionsPage)
+        loadComponent: () => import('./home/transactions/transactions.page').then(m => m.TransactionsPage)
       },
     ],
   },
- 
 ];

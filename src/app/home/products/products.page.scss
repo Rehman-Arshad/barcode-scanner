@@ -19,6 +19,25 @@ ion-item{
 
 }
 
+.iconAdd{
+    background-color: rgba(255, 255, 255, 0.441);
+    border-radius: 50%;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 0.9rem;
+  }
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .loader ion-spinner {
+    font-size: 24px;
+  }
+
 ion-button {
     ion-icon {
         font-size: 2rem;

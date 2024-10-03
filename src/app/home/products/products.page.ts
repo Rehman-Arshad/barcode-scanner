@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonButtons, IonBackButton, IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonText, IonIcon, IonModal } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonButtons, IonBackButton, IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonText, IonIcon, IonModal, IonSkeletonText, IonSpinner, IonRouterOutlet } from '@ionic/angular/standalone';
 import * as JsBarcode from 'jsbarcode';
 import { products } from 'src/app/data/products';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -10,13 +12,15 @@ import { products } from 'src/app/data/products';
   templateUrl: './products.page.html',
   styleUrls: ['./products.page.scss'],
   standalone: true,
-  imports: [IonModal, IonIcon, IonText, IonLabel, IonImg, IonItem, IonList, IonBackButton, IonButtons, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, IonThumbnail]
+  imports: [RouterLink, CommonModule, IonSpinner, IonSkeletonText, IonModal, IonIcon, IonText, IonLabel, IonImg, IonItem, IonList, IonBackButton, IonButtons, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, IonThumbnail]
 })
 export class ProductsPage implements OnInit {
    items: any[] = [];
    itemModel: any = {};
    showBarcode = false;
    currency = 'Rs';
+   loading: boolean = true;
+   products: any[] = [];
 
   constructor() { }
 
@@ -46,6 +50,14 @@ export class ProductsPage implements OnInit {
 
   hideBarcodeData() {
     this.showBarcode = false;
+  }
+
+  onImageLoad() {
+    this.loading = false;
+  }
+
+  onImageError(){
+    this.loading = false;
   }
 
 }

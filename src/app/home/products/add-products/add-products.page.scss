@@ -1,0 +1,13 @@
+.addBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .custom-button {
+    font-size: 1rem;
+    --background: #000000;
+    --color: white;
+    --border-radius: 0.625rem;
+    width: 150px;
+    height: 40px;
+  }
