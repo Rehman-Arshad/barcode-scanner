@@ -7,24 +7,30 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
-<form [formGroup]="addProductForm" (ngSubmit)="addProduct()" class="addProduct">
-<ion-list>
-  <ion-item>
-    <ion-label position="floating">Product Name</ion-label>
-    <ion-input formControlName="name" type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Product Description</ion-label>
-    <ion-input formControlName="description" type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Product Price</ion-label>
-    <ion-input formControlName="price" type="number"></ion-input>
-  </ion-item>
-</ion-list>
-<div class="addBtn">
-  <ion-button type="submit" expand="block"  class="custom-button">Add Product</ion-button>
-</div>
+<form >
+  <label>
+    Name:
+    <input [(ngModel)]="product.name" name="name" required>
+  </label>
+  <label>
+    Description:
+    <input [(ngModel)]="product.description" name="description">
+  </label>
+  <label>
+    Price:
+    <input type="number" [(ngModel)]="product.price" name="price" required>
+  </label>
+  <label>
+    Cover Image URL:
+    <input [(ngModel)]="product.cover" name="cover">
+  </label>
+  <label>
+    Barcode:
+    <input [(ngModel)]="product.barcode" name="barcode">
+  </label>
+  <button type="submit" (click)="addProduct()">Add Product</button>
 </form>
+
 </ion-content>

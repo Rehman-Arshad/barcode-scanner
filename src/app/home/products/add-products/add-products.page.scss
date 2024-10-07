@@ -1,13 +1,38 @@
-.addBtn {
+ion-content {
+  --background: #f7f7f7; // light gray background
+  padding: 16px;
+  form {
     display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    label {
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      &:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 4px #aaa;
+      }
+    }
+    button[type="submit"] {
+      background-color: #4CAF50; // green color
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover {
+        background-color: #3e8e41; // darker green color
+      }
+    }
   }
-  .custom-button {
-    font-size: 1rem;
-    --background: #000000;
-    --color: white;
-    --border-radius: 0.625rem;
-    width: 150px;
-    height: 40px;
-  }
+}

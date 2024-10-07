@@ -1,33 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ProductService } from 'src/app/services/product/product.service';
+import { Product } from 'src/app/data/products';
+import { IonHeader, IonButton, IonList, IonBackButton, IonToolbar, IonButtons, IonTitle, IonContent, IonIcon } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonButton, IonIcon, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
-  selector: 'app-add-products',
+  selector: 'app-add-product',
+  standalone: true,
   templateUrl: './add-products.page.html',
   styleUrls: ['./add-products.page.scss'],
-  standalone: true,
-  imports: [IonList, RouterLink, FormsModule, ReactiveFormsModule ,IonLabel, IonItem, IonIcon, IonButton, IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonIcon, FormsModule, IonContent, IonTitle, IonButtons, IonToolbar, IonHeader, IonButton, IonList, IonBackButton, CommonModule],
 })
-export class AddProductsPage implements OnInit {
+export class AddProductsPage {
+  product: Product = { id: '', name: '', description: '', price: 0, status: true, rating: 0, cover: '', barcode: '' };
 
-  addProductForm!: FormGroup;
+  constructor(private productService: ProductService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.addProductForm = new FormGroup({
-      name: new  FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      price: new FormControl('', Validators.required)
-    })
+  
+    addProduct() {
+      if (!this.product.name || !this.product.price) {
+        console.error('Product name and price are required');
+        return;
+      }
+    
+      if (this.product.price <= 0) {
+        console.error('Product price must be a positive number');
+        return;
+      }
+    
+      try {
+        this.product.id = this.productService.generateId(); // Use a UUID library to generate a unique ID
+        this.productService.addProduct(this.product);
+        this.resetForm();
+        console.log('New product added');
+      } catch (error) {
+        console.error('Error adding product:', error);
+      }
+    }
+    resetForm() {
+      this.product = { id: '', name: '', description: '', price: 0, status: true, rating: 0, cover: '', barcode: '' };
+    }
+    generateId(): number {
+      return parseInt(uuidv4().replace(/-/g, ''));
+    }
   }
-
-  addProduct(): void {
-    console.log(this.addProductForm.value);
-  }
-}
-

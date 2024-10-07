@@ -1,20 +1,24 @@
 import { Injectable } from '@angular/core';
-import { products } from 'src/app/data/products';
-
+import { Product } from 'src/app/data/products'
+import { products as initialProducts } from 'src/app/data/products'; 
+import { v4 as uuidv4 } from 'uuid';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  generateId(): string {
+    return uuidv4();
+  }
+  private products: Product[] = initialProducts;
 
-  private products: any[] = products;
-  constructor() { }
-  
-  getProducts(): any[] {
+  constructor() {}
+
+  getProducts(): Product[] {
     return this.products;
   }
 
-  addProduct(product: any): void {
+  addProduct(product: Product): void {
     this.products.push(product);
-    console.log("I am pushed :" + product)
   }
 }
+
