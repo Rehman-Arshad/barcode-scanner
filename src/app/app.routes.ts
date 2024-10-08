@@ -1,10 +1,10 @@
-import { Routes } from '@angular/router';
+import { Routes } from '@angular/router'
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: 'login',
@@ -16,48 +16,64 @@ export const routes: Routes = [
   },
   {
     path: 'reset-password',
-    loadComponent: () => import('./reset-password/reset-password.page').then(m => m.ResetPasswordPage)
+    loadComponent: () =>
+      import('./reset-password/reset-password.page').then(
+        m => m.ResetPasswordPage
+      )
   },
   {
     path: 'home',
     children: [
       {
         path: '',
-        loadComponent: () => import('./home/home.page').then(m => m.HomePage),
+        loadComponent: () => import('./home/home.page').then(m => m.HomePage)
       },
       {
         path: 'products',
         children: [
           {
             path: '',
-            loadComponent: () => import('./home/products/products.page').then(m => m.ProductsPage)
+            loadComponent: () =>
+              import('./home/products/products.page').then(m => m.ProductsPage)
           },
           {
             path: 'add-products',
-            loadComponent: () => import('./home/products/add-products/add-products.page').then(m => m.AddProductsPage)
+            loadComponent: () =>
+              import('./home/products/add-products/add-products.page').then(
+                m => m.AddProductsPage
+              )
           },
           {
             path: 'products-details',
-            loadComponent: () => import('./home/products/products-details/products-details.page').then( m => m.ProductsDetailsPage)
-          },
+            loadComponent: () =>
+              import(
+                './home/products/products-details/products-details.page'
+              ).then(m => m.ProductsDetailsPage)
+          }
         ]
       },
       {
         path: 'cart',
-        loadComponent: () => import('./home/cart/cart.page').then(m => m.CartPage)
+        loadComponent: () =>
+          import('./home/cart/cart.page').then(m => m.CartPage)
       },
       {
         path: 'profile',
-        loadComponent: () => import('./home/profile/profile.page').then(m => m.ProfilePage)
+        loadComponent: () =>
+          import('./home/profile/profile.page').then(m => m.ProfilePage)
       },
       {
         path: 'orders',
-        loadComponent: () => import('./home/orders/orders.page').then(m => m.OrdersPage)
+        loadComponent: () =>
+          import('./home/orders/orders.page').then(m => m.OrdersPage)
       },
       {
         path: 'transactions',
-        loadComponent: () => import('./home/transactions/transactions.page').then(m => m.TransactionsPage)
-      },
-    ],
-  },
-];
+        loadComponent: () =>
+          import('./home/transactions/transactions.page').then(
+            m => m.TransactionsPage
+          )
+      }
+    ]
+  }
+]

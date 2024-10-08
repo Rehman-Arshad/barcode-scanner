@@ -19,13 +19,15 @@
       <ion-thumbnail slot="start">
         <ion-img [src]="item.cover"></ion-img>
       </ion-thumbnail>
-      <ion-label>
+      <ion-label color="secondary">
         <h2>{{ item.name }}</h2>
         <p>{{ item.description }}</p>
         <p>{{ currency }} {{ item.price }}</p>
         <p>Rating: {{ item.rating }}</p>
-        <ion-button (click)="getBarcodeData(item)">Show Barcode</ion-button>
       </ion-label>
+      <ion-button slot="end" fill="clear" color="dark" (click)="getBarcodeData(item)">
+        <ion-icon slot="icon-only" name="barcode-outline"> </ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 

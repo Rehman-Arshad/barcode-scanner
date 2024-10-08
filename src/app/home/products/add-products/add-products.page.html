@@ -30,7 +30,11 @@
     Barcode:
     <input [(ngModel)]="product.barcode" name="barcode">
   </label>
-  <button type="submit" (click)="addProduct()">Add Product</button>
+  <div class="addBtn">
+    <ion-button class="custom-button"
+    (click)='addProduct()'>SignUp</ion-button
+    >
+  </div>
 </form>
 
 </ion-content>

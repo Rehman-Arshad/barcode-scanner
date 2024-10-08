@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
     return this.loginForm?.controls
   }
 
-  async loginUser(userEmail: string, userPassword: string){
+  async loginUser(){
     const loading = await this.loadingCtrl.create();
     await loading.present();
     if (this.loginForm?.valid){
