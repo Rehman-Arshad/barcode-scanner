@@ -45,14 +45,16 @@
     <div class="loginBtn">
       <ion-button class="custom-button" (click)='loginUser()'
         >Login</ion-button>
-        <ion-icon class="fingerPrint" name="finger-print"></ion-icon>
+        <div (click)="loginWithFingerprint()">
+          <ion-icon class="fingerPrint" name="finger-print"></ion-icon>
+        </div>
       </div>
   </form>
   <ion-text class="sigup">
     <div class="signupLink">
       <p>
         <a style="color: rgb(0, 0, 0)"
-        (click)="loginWithFingerprint()">Don't have an account? </a>
+        >Don't have an account? </a>
          
         <a [routerLink]="['/signup']" style="color: rgb(255, 255, 255)"
           >Sign up</a
