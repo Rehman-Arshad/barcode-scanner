@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title color="light">Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/home"></ion-back-button>
+    </ion-buttons>  
+    <ion-buttons slot="end">
+      <ion-title color="light" (click)="logOut()">Logout</ion-title>
+    </ion-buttons>      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-card color="secondary" >
+   
+  <ion-card-content>
+    <div class="profileImg">
+      <img src="assets/img/avatar.jpg" class="userImg">
+    </div>
+    <div class="details">
+      <ion-title>
+        {{ userName }}
+      </ion-title>
+      <ion-text> {{userEmail}}</ion-text>
+    </div>
+      
+  </ion-card-content>
+</ion-card>
+</ion-content>

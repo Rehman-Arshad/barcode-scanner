@@ -1,35 +1,34 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title color="light">Products</ion-title>
-
-   <ion-buttons slot="start">
-   <ion-back-button color="light" defaultHref="/home"></ion-back-button>
-   </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="iconAdd" routerLink="add-products">
+      <ion-button color="dark">
+        <ion-icon name="add-outline" class="addIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list class="ion-margin-top">
-    @for(item of items; track $index) {
-      <ion-item>
-        <ion-thumbnail slot="start">
-        <ion-img [src]="item?.cover"> </ion-img>
-        </ion-thumbnail>
 
-        <ion-label>
-          {{item?.name}}
-          <p>
-            {{item?.description}}
-          </p>
-          <p>
-            <ion-text color="secondary">{{currency}}{{item?.price}}</ion-text>
-          </p>
-        </ion-label>
-        <ion-button slot="end" fill="clear" color="dark" (click)="getBarcodeData(item)">
-          <ion-icon slot="icon-only" name="barcode-outline"> </ion-icon>
-        </ion-button>
-      </ion-item>
-    }
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="item.cover"></ion-img>
+      </ion-thumbnail>
+      <ion-label color="secondary">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <p>{{ currency }} {{ item.price }}</p>
+        <p>Rating: {{ item.rating }}</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear" color="dark" (click)="getBarcodeData(item)">
+        <ion-icon slot="icon-only" name="barcode-outline"> </ion-icon>
+      </ion-button>
+    </ion-item>
   </ion-list>
 
   <ion-modal

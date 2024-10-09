@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title color="light">Add Products</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+<form >
+  <label>
+    Name:
+    <input [(ngModel)]="product.name" name="name" required>
+  </label>
+  <label>
+    Description:
+    <input [(ngModel)]="product.description" name="description">
+  </label>
+  <label>
+    Price:
+    <input type="number" [(ngModel)]="product.price" name="price" required>
+  </label>
+  <label>
+    Barcode:
+    <input [(ngModel)]="product.barcode" name="barcode">
+  </label>
+  <div class="addBtn">
+    <ion-button class="custom-button"
+    (click)='addProduct()'>Add</ion-button
+    >
+  </div>
+</form>
+
+</ion-content>

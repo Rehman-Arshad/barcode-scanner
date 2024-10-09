@@ -20,21 +20,20 @@ export class HomePage implements OnInit, OnDestroy {
   totalItems: number = 0;
   cartSub!: Subscription;
    private cartService = inject(CartService);
-  user: string = '';
+  userName: string = '';
 
 
   constructor(public router: Router, public authService: AuthenticationService) {
-    this.getProfile();
+   
   }
 
   ngOnInit(){
    this.cartSub = this.cartService.cart.subscribe({
     next: (cart) => {
-      console.log(cart);
-      console.log("this is cart");
       this.totalItems = cart?.totalItem ?? 0;
     }
-   });
+  });
+  this.getProfile();
   }
 
   async scanBarcode(){
@@ -84,8 +83,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   async getProfile() {
     const profile = await this.authService.getProfile();
-    console.log("User Profile:", profile);
-    this.user = profile;
+    this.userName = profile.displayName ?? '';
   }
 
   async logOut() {
