@@ -4,8 +4,24 @@ ion-content {
   form {
     display: flex;
     flex-direction: column;
-    
     padding: 2rem;
+    .cameraIconContainer {
+      display: flex;
+      justify-content: center;
+    .cameraIcon, .galleryIcon{
+      width: 70px;
+      height: 70px;
+      border: 2px solid  #00aff0;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2px;
+      ion-icon{
+        font-size: 2rem;
+      }
+    }
+  }
     label {
       margin-bottom: 8px;
       display: flex;
@@ -34,4 +50,7 @@ ion-content {
     }
    
   }
+
+ 
+  
 }

@@ -10,6 +10,11 @@
 
 <ion-content [fullscreen]="true">
 <form >
+  <div class="cameraIconContainer">
+    <div class="cameraIcon" (click)="showCameraOptions()">
+      <ion-icon name="camera-outline" color="secondary"></ion-icon>
+    </div>
+  </div>
   <label>
     Name:
     <input [(ngModel)]="product.name" name="name" required>
