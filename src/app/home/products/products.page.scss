@@ -1,3 +1,16 @@
+.iconAdd {
+    background-color: rgba(255, 255, 255, 0.441);
+    border-radius: 50%;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addIcon{
+    font-size: 1.5rem !important;
+}
 ion-item{
     margin-bottom: 3vh;
     ion-thumbnail {

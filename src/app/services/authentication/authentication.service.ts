@@ -71,7 +71,7 @@ export class AuthenticationService {
   async getProfile () {
     try {
       const user = await auth.currentUser
-      return user ? user.displayName || 'AbdulRehman' : 'AbdulRehman'
+      return user ? { displayName: user.displayName, email: user.email } : { displayName: 'AbdulRehman', email: '' };
     } catch (error) {
       throw error
     }

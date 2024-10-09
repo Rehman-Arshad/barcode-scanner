@@ -83,7 +83,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   async getProfile() {
     const profile = await this.authService.getProfile();
-    this.userName = profile;
+    this.userName = profile.displayName ?? '';
   }
 
   async logOut() {

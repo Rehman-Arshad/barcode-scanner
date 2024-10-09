@@ -30,7 +30,7 @@ export class AddProductsPage {
       }
     
       try {
-        this.product.id = this.productService.generateId(); // Use a UUID library to generate a unique ID
+        this.product.id = this.productService.generateId(); 
         this.productService.addProduct(this.product);
         this.resetForm();
         console.log('New product added');

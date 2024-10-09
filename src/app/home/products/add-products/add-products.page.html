@@ -23,16 +23,12 @@
     <input type="number" [(ngModel)]="product.price" name="price" required>
   </label>
   <label>
-    Cover Image URL:
-    <input [(ngModel)]="product.cover" name="cover">
-  </label>
-  <label>
     Barcode:
     <input [(ngModel)]="product.barcode" name="barcode">
   </label>
   <div class="addBtn">
     <ion-button class="custom-button"
-    (click)='addProduct()'>Add Product</ion-button
+    (click)='addProduct()'>Add</ion-button
     >
   </div>
 </form>

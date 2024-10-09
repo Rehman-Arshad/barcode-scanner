@@ -1,24 +1,52 @@
-.profileImg{
-    display: flex;
-    justify-content: center;
-    
-}
-.userImg{
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    border-radius: 50%;
-    
-}
-
-ion-card{
+ion-card {
   box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-ion-card-content{
-  margin-top: 1rem;
+  margin: 0;
+  padding: 1.5rem;
 }
 
+ion-card-content {
+  border: none;
+  border-radius: 0.7rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 110px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.profileImg {
+  position: relative;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+
+.userImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ion-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+ion-text {
+  font-size: 1rem;
+  color: #666;
+  padding-left: 1rem;
+}

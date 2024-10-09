@@ -11,24 +11,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-card>
-  <ion-card-header>
+<ion-card color="secondary" >
+   
+  <ion-card-content>
     <div class="profileImg">
       <img src="assets/img/avatar.jpg" class="userImg">
     </div>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-label>Name:</ion-label>
-        <ion-note slot="end">{{ user }}</ion-note>
-      </ion-item>
-      <ion-item>
-        <ion-label>Email:</ion-label>
-        <ion-note slot="end">{{ user }}</ion-note>
-      </ion-item>
+    <div class="details">
+      <ion-title>
+        {{ userName }}
+      </ion-title>
+      <ion-text> {{userEmail}}</ion-text>
+    </div>
       
-    </ion-list>
   </ion-card-content>
 </ion-card>
 </ion-content>
